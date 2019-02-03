@@ -1,10 +1,9 @@
 
 function simulate() {
-    let coinFlipCount = parseInt(document.getElementById("flipCount"));
-    let subsequenceLength = parseInt(document.getElementById("subsequenceLength"));
+    let coinFlipCount = parseInt(document.getElementById("flipCount").value);
+    let subsequenceLength = parseInt(document.getElementById("subsequenceLength").value);
     var simulation = runSimulation(coinFlipCount, subsequenceLength);
-    let resultSet = simulation.toString();
-    document.getElementById("results").innerText = resultSet;
+    document.getElementById("results").innerText = JSON.stringify(simulation, null, 4);
 }
 
 function runSimulation(coinCount, targetSequenceLength) {
